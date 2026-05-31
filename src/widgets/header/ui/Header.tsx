@@ -29,9 +29,16 @@ export function Header() {
             ))}
           </nav>
         </div>
-        <Button variant="outline" size="icon" className="cursor-pointer">
-          <User />
-        </Button>
+        <Link href="/login">
+          <Button variant="outline" size="icon" className="cursor-pointer">
+            <User />
+          </Button>
+        </Link>
+        <Link href="/register">
+          <Button variant="outline" size="icon" className="cursor-pointer">
+            <User />
+          </Button>
+        </Link>
       </div>
     </header>
   )

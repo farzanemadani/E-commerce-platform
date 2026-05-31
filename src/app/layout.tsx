@@ -1,27 +1,30 @@
 import type { Metadata } from 'next'
-import { Geist } from 'next/font/google'
 
-import { cn } from '@/lib/utils'
 import { siteConfig } from '@/shared/config/site'
 import { Footer } from '@/widgets/footer'
 import { Header } from '@/widgets/header'
 
 import './globals.css'
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' })
-
 export const metadata: Metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+  dialog,
+}: {
+  children: React.ReactNode
+  dialog: React.ReactNode
+}) {
   return (
-    <html lang="en" dir="rtl" className={cn('font-sans', geist.variable)}>
+    <html lang="en" dir="rtl">
       <body>
         <Header />
         <main>{children}</main>
         <Footer />
+        {dialog}
       </body>
     </html>
   )
