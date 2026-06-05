@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { navLinks } from '@/shared/config'
+import { isNavGroup, navLinks } from '@/shared/config'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,30 +10,22 @@ import {
   NavigationMenuTrigger,
 } from '@/shared/ui/navigation-menu'
 
-function HeaderNav() {
+import { HeaderNavNestedLinks } from './HeaderNavNestedLinks'
+
+export function HeaderNav() {
   return (
     <NavigationMenu dir="rtl" className="hidden lg:flex">
       <NavigationMenuList>
-        {navLinks.map((el, i) => {
-          return el.children ? (
-            <NavigationMenuItem key={`item-${i}`}>
+        {navLinks.map((el) => {
+          return isNavGroup(el) ? (
+            <NavigationMenuItem key={el.label}>
               <NavigationMenuTrigger>{el.label}</NavigationMenuTrigger>
-              {el.children && (
-                <NavigationMenuContent dir="rtl">
-                  <ul className="w-38 p-2">
-                    {el.children.map((item, j) => {
-                      return (
-                        <li key={j} className="mb-2">
-                          <Link href={item.href}>{item.label}</Link>
-                        </li>
-                      )
-                    })}
-                  </ul>
-                </NavigationMenuContent>
-              )}
+              <NavigationMenuContent dir="rtl">
+                <ul className="w-44 p-2">{HeaderNavNestedLinks(el.children)}</ul>
+              </NavigationMenuContent>
             </NavigationMenuItem>
           ) : (
-            <NavigationMenuItem key={`item-${i}`}>
+            <NavigationMenuItem key={el.href}>
               <NavigationMenuLink asChild>
                 <Link href={el.href}>{el.label}</Link>
               </NavigationMenuLink>
@@ -44,5 +36,3 @@ function HeaderNav() {
     </NavigationMenu>
   )
 }
-
-export default HeaderNav

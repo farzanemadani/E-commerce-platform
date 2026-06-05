@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 import { Button } from '@/shared/ui/button'
 
-import HeaderNav from './HeaderNav'
-import MobileMenu from './MobileMenu'
+import { HeaderNav } from './HeaderNav'
+import { MobileMenu } from './MobileMenu'
 
 export function Header() {
   return (
