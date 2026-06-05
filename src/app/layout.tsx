@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { siteConfig } from '@/shared/config/site'
+import { siteConfig } from '@/shared/config'
 import { Footer } from '@/widgets/footer'
 import { Header } from '@/widgets/header'
 
