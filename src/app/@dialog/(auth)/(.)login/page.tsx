@@ -1,6 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation'
 
+import { LoginForm } from '@/features/auth/login/ui/LoginForm'
 import { RouteDialog } from '@/shared/ui/RouteDialog'
 export default function LoginDialog() {
   const router = useRouter()
@@ -12,7 +13,7 @@ export default function LoginDialog() {
       route="/login"
       onClose={() => router.replace('/')}
     >
-      <div>dialog page</div>
+      <LoginForm />
     </RouteDialog>
   )
 }
