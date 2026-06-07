@@ -4,6 +4,8 @@ import { siteConfig } from '@/shared/config'
 import { Footer } from '@/widgets/footer'
 import { Header } from '@/widgets/header'
 
+import { AppProviders } from './providers'
+
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -21,10 +23,14 @@ export default function RootLayout({
   return (
     <html lang="en" dir="rtl">
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        {dialog}
+        <AppProviders>
+          <Header />
+          <main className="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white">
+            {children}
+          </main>
+          <Footer />
+          {dialog}
+        </AppProviders>
       </body>
     </html>
   )

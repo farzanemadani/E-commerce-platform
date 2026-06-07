@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export function Footer() {
   return (
-    <footer className="border-t px-6 py-8">
+    <footer className="border-t bg-white px-6 py-8 text-zinc-900 dark:bg-zinc-900 dark:text-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         <span className="text-sm font-semibold">لوگو</span>
 

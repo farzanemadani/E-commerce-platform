@@ -12,7 +12,11 @@ export function RouteDialog({ children, title, description, onClose, route }: Ro
   const open = pathname === route
   const handleOpenChange = (isOpen: boolean) => {
     if (isOpen) return
-    onClose ? onClose() : router.back()
+    if (onClose) {
+      onClose()
+    } else {
+      router.back()
+    }
   }
 
   return (
