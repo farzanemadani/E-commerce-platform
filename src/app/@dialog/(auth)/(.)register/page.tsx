@@ -1,6 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation'
 
+import { RegisterForm } from '@/features/auth/register/ui/RegisterForm'
 import { RouteDialog } from '@/shared/ui/RouteDialog'
 export default function RegisterDialog() {
   const router = useRouter()
@@ -11,7 +12,7 @@ export default function RegisterDialog() {
       route="/register"
       onClose={() => router.replace('/')}
     >
-      <div>register dialog page</div>
+      <RegisterForm />
     </RouteDialog>
   )
 }
