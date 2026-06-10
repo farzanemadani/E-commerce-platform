@@ -27,5 +27,5 @@ export const navLinks = [
       { label: 'تاریخچه', href: '/about/history' },
     ],
   },
-  { label: 'تماس با ما', href: '/contact' },
+  { label: 'تماس با ما', href: '/contact-us' },
 ] as const satisfies readonly NavItem[]
