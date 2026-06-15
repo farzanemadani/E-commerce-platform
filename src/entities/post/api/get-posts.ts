@@ -1,6 +1,6 @@
 import type { Post } from '../model/types'
 
+import { MOCK_POSTS } from './__mocks__/posts.mock'
 export async function getPosts(): Promise<Post[]> {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-  return res.json()
+  return MOCK_POSTS
 }

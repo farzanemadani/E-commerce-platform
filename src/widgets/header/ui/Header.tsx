@@ -10,7 +10,7 @@ import { MobileMenu } from './MobileMenu'
 export function Header() {
   return (
     <header className="border-b bg-white px-6 py-4 text-zinc-900 dark:bg-zinc-900 dark:text-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
+      <div className="mx-auto flex items-center justify-between gap-6">
         <div className="flex items-center gap-6">
           <MobileMenu />
           <Link href="/" className="text-xl font-bold">
