@@ -1,15 +1,11 @@
-'use client'
-import { useQuery } from '@tanstack/react-query'
-
-import { postQueries } from '@/entities/post'
+import { getPost } from '@/entities/post/api/get-post'
 import { Container } from '@/shared/ui/Container'
 
 interface PostDetailProps {
   id: number
 }
-export function PostDetail({ id }: PostDetailProps) {
-  const { data: post } = useQuery(postQueries.detail(id))
-  if (!post) return
+export async function PostDetail({ id }: PostDetailProps) {
+  const post = await getPost(id)
   return (
     <Container>
       <article>
