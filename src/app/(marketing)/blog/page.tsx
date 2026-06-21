@@ -1,5 +1,5 @@
 import { PostList } from '@/widgets/post-list'
 
-export default async function BlogPage() {
+export default function BlogPage() {
   return <PostList />
 }
