@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import localFont from 'next/font/local'
 
 import { siteConfig } from '@/shared/config'
 import { Footer } from '@/widgets/footer'
@@ -13,6 +14,13 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 }
 
+const yekanBakh = localFont({
+  src: '../../public/fonts/YekanBakh-VF.ttf',
+  display: 'fallback',
+  variable: '--font-sans',
+  weight: '100 900',
+})
+
 export default function RootLayout({
   children,
   dialog,
@@ -21,7 +29,7 @@ export default function RootLayout({
   dialog: React.ReactNode
 }) {
   return (
-    <html lang="en" dir="rtl">
+    <html lang="en" dir="rtl" className={yekanBakh.variable}>
       <body>
         <AppProviders>
           <Header />

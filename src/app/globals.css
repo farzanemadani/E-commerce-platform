@@ -3,11 +3,6 @@
 @import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
-@font-face {
-  font-family: 'Yekan Bakh VF';
-  src: url('../../public/fonts/YekanBakh-VF.ttf');
-  font-display: fallback;
-}
 
 @theme inline {
   --color-background: var(--background);
@@ -51,10 +46,6 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-}
-
-body {
-  font-family: 'Yekan Bakh VF';
 }
 
 :root {
